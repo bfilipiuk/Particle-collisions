@@ -42,7 +42,6 @@ public class Particle {
         double x = 10;
         double y = 50;
         position = new Vector2D(x, y);
-
     }
 
     public Particle(double width, double height)
