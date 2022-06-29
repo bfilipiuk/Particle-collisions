@@ -10,7 +10,7 @@ public class Main extends JFrame {
 
     public static void main(String[] args){
         PEPE = new JFrame();
-        PEPE.setTitle("Particles");
+        PEPE.setTitle("2D particle collisions");
         PEPE.setBounds(0, 0, WIDTH, HEIGHT);
         PEPE.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         PEPE.setResizable(false);

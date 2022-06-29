@@ -4,12 +4,14 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.random.RandomGenerator;
 
 public class Particle {
     private Vector2D position;
     private Vector2D velocity;
 
-    //private int SCREENHEIGHT = 500;
+    Random generator = new Random();
+
     private double radius;
     private double mass;
 
@@ -46,23 +48,22 @@ public class Particle {
     {
         double x = Math.random() * width;
         double y = Math.random() * height;
+
         position = new Vector2D(x, y);
         velocity = new Vector2D(0, 0);
-        //Losowa prędkość początkowa
-        double vx = Math.random() * 10;
-        double vy = Math.random() * 10;
+
+        double vx = (generator.nextInt(20) - 40) * 10;
+        double vy = (generator.nextInt(20) - 40) * 10;
         velocity = new Vector2D(vx, vy);
 
-        //promień kuli można dodać losowość
-        radius = 20;
-        //masa kuli można dodać losowość
-        mass = 1;
+        radius = generator.nextInt(30) + 10;
+        mass = radius / 20;
     }
 
     public void draw(Graphics g, double mapHeight, double mapWidth, int screenHeight, int screenWidth)
     {
         g.setColor(Color.red);
-        g.fillOval((int)((position.getX()/mapWidth) * screenWidth), (int)(screenHeight - (position.getY()/mapHeight) * screenHeight),
+        g.fillOval((int)(((position.getX() - radius - 5)/mapWidth) * screenWidth), (int)(screenHeight - ((position.getY() + radius + 15)/mapHeight) * screenHeight),
                 (int)((radius*2/mapWidth) * screenWidth), (int)((radius*2/mapHeight) * screenHeight));
     }
 

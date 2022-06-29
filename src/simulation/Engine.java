@@ -9,7 +9,7 @@ public class Engine  extends JPanel implements Runnable, ActionListener {
 
     private Thread _thread;
 
-    private final static int PARTICLES_NUMNER = 4;
+    private final static int PARTICLES_NUMNER = 10;
 
     private Particle[] particles = new Particle[PARTICLES_NUMNER];
     private int screenWidth;
@@ -20,8 +20,8 @@ public class Engine  extends JPanel implements Runnable, ActionListener {
 
     public Engine(int w, int h, float mapWidth, float mapHeight)
     {
-        screenWidth = w - 5;
-        screenHeight = h - 20;
+        screenWidth = w;
+        screenHeight = h;
         this.mapHeight = mapHeight;
         this.mapWidth = mapWidth;
         start();
@@ -46,7 +46,6 @@ public class Engine  extends JPanel implements Runnable, ActionListener {
 
     }
 
-    // dt - czas w sekundach
     private void update(double dt)
     {
         for (Particle p : particles) {
@@ -120,11 +119,6 @@ public class Engine  extends JPanel implements Runnable, ActionListener {
 
         double totalMass =  m1 + m2;
 
-        //double r1 =  p1.getRadius();
-        //double r2 =  p2.getRadius();
-        //double d = r1 + r2;
-        //d = dist
-
         Vector2D r1Subr2 = Vector2D.sub(p1.getPosition(), p2.getPosition());
         Vector2D v1Subv2 = Vector2D.sub(p1.getVelocity(), p2.getVelocity());
         Vector2D r2Subr1 = Vector2D.sub(p2.getPosition(), p1.getPosition());
@@ -177,7 +171,6 @@ public class Engine  extends JPanel implements Runnable, ActionListener {
             }
         }
 
-        //Pytanie czy od sufitu mają się odbijać
         if(( y + r + vy > mapHeight && p.getVelocity().getY() > 0))
         {
             p.getVelocity().flipY();
