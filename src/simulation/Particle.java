@@ -66,7 +66,7 @@ public class Particle {
     }
 
     public void addGravity(double time){
-        velocity.add(Vector2D.multByNumb(new Vector2D(0, -9.81), time));
+        velocity.add(Vector2D.multByNumb(new Vector2D(0, -350.81), time));
     }
 
     public void move(double time)
