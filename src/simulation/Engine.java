@@ -9,7 +9,7 @@ public class Engine  extends JPanel implements Runnable, ActionListener {
 
     private Thread _thread;
 
-    private final static int PARTICLES_NUMNER = 8;
+    private final static int PARTICLES_NUMNER = 4;
 
     private Particle[] particles = new Particle[PARTICLES_NUMNER];
     private int screenWidth;
