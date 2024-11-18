@@ -1,11 +1,13 @@
 # Particle-collisions
 
 Physics-based program designed to simulate the motion 
-of particles in a two-dimensional space. This project focuses on modeling realistic
+of random-sized particles in a two-dimensional space. This project focuses on modeling realistic
 physical interactions between particles, such as movement and collisions, by 
 utilizing the principles of classical mechanics. The simulation is built in Java 
 and is designed to be both efficient and easy to expand, making it suitable for 
 educational purposes, prototyping, or further development.
+
+<img src="snippet.png" alt="project snippet" width="500" height="500">
 
 ## Table of Contents
 1. [Getting Started](#getting-started)
@@ -49,7 +51,7 @@ Before you begin, ensure you have the following installed on your system:
    
 ## Features
 
-- Simulates particle motion in a 2D space.
+- Simulates random-sized particles motion and collisions in a 2D space.
 - Code configurable simulation parameters.
 
 ## Technologies used
