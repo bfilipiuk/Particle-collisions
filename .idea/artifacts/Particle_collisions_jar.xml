@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Particle-collisions:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Particle_collisions_jar</output-path>
+    <root id="archive" name="Particle-collisions.jar">
+      <element id="module-output" name="Particle-collisions" />
+    </root>
+  </artifact>
+</component>
